@@ -1,6 +1,8 @@
+// llamando al contenido de las imagenes
 const contImagesSw = document.getElementById('imagesSTcont');
 
 (function swImg() {
+  // Recorriendo las imagenes
   for (let i = 0; i < 89; i++) {
     const uri = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
     console.log(uri);
@@ -9,6 +11,7 @@ const contImagesSw = document.getElementById('imagesSTcont');
 })();
 
 function image(data) {
+  // Creando las iamgenes en el DOM
   let pictures = document.createElement('img');
   pictures.src = (data);
   pictures.setAttribute('data-target', '#myModal');
@@ -16,12 +19,14 @@ function image(data) {
   pictures.className = 'styleImgST';
   contImagesSw.appendChild(pictures);
 
+  // Evento click a la imagen y llamando a la funcion del modal
   pictures.addEventListener('click', function(e) {
     e.preventDefault();
     getModal();
   });
 }
 
+// Si todo esta correcto 
 function getModal() {
   const starWarsReq = new XMLHttpRequest;
   const star = starWarsReq.open('GET', 'https://swapi.co/api/people/');
@@ -31,25 +36,26 @@ function getModal() {
   starWarsReq.send();
 }
 
+// Si te da un error
 function handleError() {
   console.log('Se ha presentado un error');
 }
-  
+
+// Funcion para el modal
 function addModal() {
   const data = JSON.parse(this.response);
-  console.log(data);
+  // console.log(data);
   const article = data.results;
-  console.log(article);
-  
+  // console.log(article);
+
   for (const doc of article) {
-    console.log(doc);
-    
+    // console.log(doc);   
    
     if (doc.name === 'Luke Skywalker') {
       let output = '';
       const title = doc.name;
       const birth = doc.birth_year;
-      console.log(title + birth);
+      // console.log(title + birth);
       output += `      
            <div class="modal-header">
            <button type="button" class="white close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -64,8 +70,7 @@ function addModal() {
            <p class="mod-subtitle">Eye color: <span class="mod-info">${doc.eye_color}</span></p>
          </div>
          </div>
-         </div>
-         `;
+         </div> `;
 
       $('.apimodal').html(output);
     }
