@@ -1,3 +1,4 @@
+
 const imagen = document.getElementById('people');
 
 imagen.addEventListener('click', function(e) {
@@ -26,26 +27,30 @@ function addModal() {
   
   for (const doc of article) {
     console.log(doc);
-    var output = '';
+    
+   
     if (doc.name === 'Luke Skywalker') {
+ 
+ let output = ''
       const title = doc.name;
       const birth = doc.birth_year;
       console.log(title + birth);
-      output += `
-      <div class="modal-header">
-      <button type="button" class="white close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title">${doc.name}</h4>
-    </div>
-    <div class="modal-body">
-    <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <p class="mod-subtitle">Birthday: <span class="mod-info">${doc.birth_year}</span></p>
-    </div>
-  </div>
-    </div>
-    `;
-    return output;
-    } 
+      output += `      
+           <div class="modal-header">
+           <button type="button" class="white close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title">${title}</h4>
+           </div>
+           <div class="modal-body">
+           <div class="row">
+           <div class="col-xs-12 col-sm-6">
+           <p class="mod-subtitle">Birthday: <span class="mod-info">${birth}</span></p>
+         </div>
+         </div>
+         </div>
+         `;
+
+         $('.apimodal').html(output)
+    }
   }
 }
 
