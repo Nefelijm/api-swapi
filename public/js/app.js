@@ -1,10 +1,26 @@
+const contImagesSw = document.getElementById('imagesSTcont');
 
-const imagen = document.getElementById('people');
+(function swImg() {
+  for (let i = 0; i < 89; i++) {
+    const uri = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
+    console.log(uri);
+    image(uri);
+  }
+})();
 
-imagen.addEventListener('click', function(e) {
-  e.preventDefault();
-  getModal();
-});
+function image(data) {
+  let pictures = document.createElement('img');
+  pictures.src = (data);
+  pictures.setAttribute('data-target', '#myModal');
+  pictures.setAttribute('data-toggle', 'modal');
+  pictures.className = 'styleImgST';
+  contImagesSw.appendChild(pictures);
+
+  pictures.addEventListener('click', function(e) {
+    e.preventDefault();
+    getModal();
+  });
+}
 
 function getModal() {
   const starWarsReq = new XMLHttpRequest;
@@ -30,8 +46,7 @@ function addModal() {
     
    
     if (doc.name === 'Luke Skywalker') {
- 
- let output = ''
+      let output = '';
       const title = doc.name;
       const birth = doc.birth_year;
       console.log(title + birth);
@@ -44,12 +59,15 @@ function addModal() {
            <div class="row">
            <div class="col-xs-12 col-sm-6">
            <p class="mod-subtitle">Birthday: <span class="mod-info">${birth}</span></p>
+           <p class="mod-subtitle">Height: <span class="mod-info">${doc.height}</span></p>
+           <p class="mod-subtitle">Gender: <span class="mod-info">${doc.gender}</span></p>
+           <p class="mod-subtitle">Eye color: <span class="mod-info">${doc.eye_color}</span></p>
          </div>
          </div>
          </div>
          `;
 
-         $('.apimodal').html(output)
+      $('.apimodal').html(output);
     }
   }
 }
