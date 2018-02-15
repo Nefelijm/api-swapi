@@ -1,39 +1,39 @@
 *{
- margin:0px;
- padding:0px;
- box-sizing:border-box;
+  margin:0px;
+  padding:0px;
+   box-sizing:border-box;
 }
 .headerAlign {
- text-align: center;
- padding: 20px;
- font-size: 30px;
- color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
 }
 
 .bgColor {
- background-color: rgb(163, 8, 8);
+  background-color: rgb(163, 8, 8);
 }
 
 .modalcss{
- background: rgb(173, 226, 28);
- margin: 10%;
- height: 350px;
- font-size: 25px;
- border:5px solid black;
+  background: rgb(173, 226, 28);
+  margin: 10%;
+  height: 350px;
+  font-size: 25px;
+  border:5px solid black;
 }
 
 .styleImgST {
- width: 20%;
+  width: 20%;
 }
 
 .logo{
- width: 45%;
- margin: 0px;
+  width: 45%;
+  margin: 0px;
  }
 
  .text{
- font-size: 35px;
- text-align: center;
- background-color:black;
- color: aqua;
+  font-size: 35px;
+  text-align: center;
+  background-color:black;
+  color: aqua;
 }

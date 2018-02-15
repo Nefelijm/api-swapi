@@ -3,7 +3,8 @@
 > Recuerda seguir siempre esta [guía de estilos](https://github.com/Laboratoria/js-style-guide/)
 
 1. **OBJETIVO DEL PROYECTO**
-.Realizar una pagina donde se muestre las imagenes de los personajes de starwars utilizando API para jalar las imagenes y tambien generar un modal y mostrar sus datos.
+
++ Realizar una página donde se muestre las imágenes de los personajes de la famosa saga de Star Wars utilizando la API Swapi para obtener las imagenes y también generar un modal y mostrar sus datos.
 
 2. **FUNCIONALIDAD**
 
@@ -39,13 +40,13 @@ ________________________________________________________________________________
     3.2 CSS3
     _________________________________
 
-    3.3BOOSTRAP
+    3.3 BOOTSTRAP3
     _________________________________
 
-    3.4 SWAPPI API
+    3.4 SWAPI API
     _________________________________
 
-    3.5starwars-visualguide API
+    3.5 starwars-visualguide API
     _________________________________
 
     3.6 node js
